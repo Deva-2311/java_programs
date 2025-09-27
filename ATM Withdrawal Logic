@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int amt = sc.nextInt();
+        sc.nextLine();
+        String noteStatus = sc.nextLine().toLowerCase();
+
+        if (noteStatus.equals("available") && (amt % 100) == 0) {
+            System.out.printf("Amount %d can be withdrawn", amt);
+        } else if (noteStatus.equals("not available") && (amt % 500) == 0) {
+            System.out.printf("Amount %d can be withdrawn", amt);
+        } else {
+            System.out.println("Enter amount in multiples of 500");
+        }
+    }
+}
