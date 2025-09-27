@@ -1,0 +1,17 @@
+class Solution {
+    public boolean threeConsecutiveOdds(int[] arr) {
+        int count = 0; // count of consecutive odd numbers
+        
+        for (int num : arr) {
+            if (num % 2 != 0) { // odd
+                count++;
+                if (count == 3) {
+                    return true;
+                }
+            } else {
+                count = 0; // reset if even
+            }
+        }
+        return false; // no 3 consecutive odds found
+    }
+}
