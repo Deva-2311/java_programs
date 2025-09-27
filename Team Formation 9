@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc = new Scanner(System.in);
+
+        int totalPlayers = sc.nextInt();
+        int playersPerTeam = sc.nextInt();
+        sc.close();
+
+        int totalTeams = totalPlayers / playersPerTeam;  // integer division
+        int playersLeftOut = totalPlayers % playersPerTeam; // remainder
+
+        System.out.println("Total teams formed: " + totalTeams);
+        System.out.println("Players left out: " + playersLeftOut);
+    }
+}
