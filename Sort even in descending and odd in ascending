@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt(); // number of elements
+        int[] arr = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        // Separate evens and odds
+        List<Integer> evens = new ArrayList<>();
+        List<Integer> odds = new ArrayList<>();
+        
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evens.add(num);
+            } else {
+                odds.add(num);
+            }
+        }
+        
+        // Sort evens descending
+        evens.sort(Collections.reverseOrder());
+        // Sort odds ascending
+        Collections.sort(odds);
+        
+        // Print evens first then odds
+        StringBuilder sb = new StringBuilder();
+        for (int num : evens) {
+            sb.append(num).append(" ");
+        }
+        for (int num : odds) {
+            sb.append(num).append(" ");
+        }
+        
+        // Trim trailing space
+        System.out.println(sb.toString().trim());
+        
+        sc.close();
+    }
+}
